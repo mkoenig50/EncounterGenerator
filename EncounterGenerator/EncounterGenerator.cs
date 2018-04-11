@@ -27,25 +27,36 @@ namespace EncounterGenerator
         {
             int numberOfMeleeEnemies = int.Parse(txtNumberOfMelee.Text);
             int numberOfRangedEnemies = int.Parse(txtNumberOfRanged.Text);
+            int numberOfLaguzEnemies = int.Parse(txtNumberOfLaguz.Text);
             int enemyLevel = int.Parse(txtLevel.Text);
+
             MeleeUnit meleeEnemy;
             RangedUnit rangedEnemy;
+            LaguzUnit laguzEnemy;
             Random r = new Random();
+
             int seed;
 
             List<EnemyUnit> enemies = new List<EnemyUnit>();
-            for(int i = 0; i < numberOfMeleeEnemies; i++)
+            for (int i = 0; i < numberOfMeleeEnemies; i++)
             {
                 seed = r.Next() % 100;
                 meleeEnemy = new MeleeUnit(enemyLevel, seed);
                 enemies.Add(meleeEnemy);
             }
 
-            for(int i = 0; i < numberOfRangedEnemies; i++)
+            for (int i = 0; i < numberOfRangedEnemies; i++)
             {
                 seed = r.Next() % 100;
                 rangedEnemy = new RangedUnit(enemyLevel, seed);
                 enemies.Add(rangedEnemy);
+            }
+
+            for (int i = 0; i < numberOfLaguzEnemies; i++)
+            {
+                seed = r.Next() % 100;
+                laguzEnemy = new LaguzUnit(enemyLevel, seed);
+                enemies.Add(laguzEnemy);
             }
 
             dgvFoeList.DataSource = enemies;

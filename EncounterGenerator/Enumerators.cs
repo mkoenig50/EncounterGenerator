@@ -13,7 +13,8 @@ namespace EncounterGenerator
         Lance,
         Bow,
         Tome,
-        Knife
+        Knife,
+        Formshift
     }
 
     enum TomeType
@@ -23,5 +24,12 @@ namespace EncounterGenerator
         Wind,
         Fire,
         Thunder
+    }
+
+    enum LaguzTribe
+    {
+        Beast,
+        Bird,
+        Dragon
     }
 }

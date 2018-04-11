@@ -41,12 +41,14 @@
             this.colAttackBonus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDamage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colWeaponType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNumberOfLaguz = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoeList)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGenerateEncounter
             // 
-            this.btnGenerateEncounter.Location = new System.Drawing.Point(353, 45);
+            this.btnGenerateEncounter.Location = new System.Drawing.Point(459, 45);
             this.btnGenerateEncounter.Name = "btnGenerateEncounter";
             this.btnGenerateEncounter.Size = new System.Drawing.Size(139, 23);
             this.btnGenerateEncounter.TabIndex = 0;
@@ -70,7 +72,7 @@
             // 
             // txtLevel
             // 
-            this.txtLevel.Location = new System.Drawing.Point(247, 47);
+            this.txtLevel.Location = new System.Drawing.Point(353, 47);
             this.txtLevel.Name = "txtLevel";
             this.txtLevel.Size = new System.Drawing.Size(100, 20);
             this.txtLevel.TabIndex = 3;
@@ -96,7 +98,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(244, 31);
+            this.label3.Location = new System.Drawing.Point(350, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 6;
@@ -148,11 +150,29 @@
             this.colWeaponType.Name = "colWeaponType";
             this.colWeaponType.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(244, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Number of Laguz";
+            // 
+            // txtNumberOfLaguz
+            // 
+            this.txtNumberOfLaguz.Location = new System.Drawing.Point(247, 48);
+            this.txtNumberOfLaguz.Name = "txtNumberOfLaguz";
+            this.txtNumberOfLaguz.Size = new System.Drawing.Size(100, 20);
+            this.txtNumberOfLaguz.TabIndex = 8;
+            // 
             // EncounterGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtNumberOfLaguz);
             this.Controls.Add(this.dgvFoeList);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -184,6 +204,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAttackBonus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDamage;
         private System.Windows.Forms.DataGridViewTextBoxColumn colWeaponType;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNumberOfLaguz;
     }
 }
 

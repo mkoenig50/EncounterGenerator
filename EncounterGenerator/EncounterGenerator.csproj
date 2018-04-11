@@ -53,6 +53,7 @@
       <DependentUpon>EncounterGenerator.cs</DependentUpon>
     </Compile>
     <Compile Include="EnemyUnit.cs" />
+    <Compile Include="LaguzUnit.cs" />
     <Compile Include="MeleeUnit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
