@@ -17,6 +17,15 @@ namespace EncounterGenerator
         Formshift
     }
 
+    enum TypeModifier
+    {
+        None,
+        Heavy,
+        Mounted,
+        Flying,
+        Wyvern
+    }
+
     enum TomeType
     {
         Light,

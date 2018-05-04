@@ -8,50 +8,39 @@ namespace EncounterGenerator
 {
     class MeleeUnit : EnemyUnit
     {
-        public MeleeUnit(int level, int seed)
+        public TypeModifier type;
+
+        public MeleeUnit(int level, int seed) : base(level, seed)
         {
             Weapon = (WeaponType)(seed % 3);
-            bool oddSeed = (seed % 2 == 1);
             Random r = new Random();
+            int typeSeed = r.Next() % 100;
 
-            //Heavy armor or light armor 
-            if (oddSeed)
+            if(typeSeed < 30)
             {
-                HP = level * 12;
-                AC = 12 + seed % 10;
+                type = TypeModifier.None;
+            }
+            else if (typeSeed < 50)
+            {
+                type = TypeModifier.Heavy;
+            }
+            else if (typeSeed < 70)
+            {
+                type = TypeModifier.Mounted;
+            }
+            else if (typeSeed < 85)
+            {
+                type = TypeModifier.Flying;
             }
             else
             {
-                HP = level * 10;
-                AC = 7 + (seed % 10) + (r.Next() % 10);
-            }
-
-            //Determine damage values based on level
-            if (level <= 5)
-            {
-                AttackBonus = seed % 4;
-                DamageDie = (seed % 3 + 2) * 2;
-            }
-            else if (level <= 10)
-            {
-                AttackBonus = seed % 4 + 1;
-                DamageDie = (seed % 2 + 3) * 2;
-            }
-            else if (level <= 15)
-            {
-                AttackBonus = seed % 4 + 2;
-                DamageDie = (seed % 3 + 3) * 2;
-            }
-            else if (level <= 20)
-            {
-                AttackBonus = seed % 4 + 3;
-                DamageDie = (seed % 3 + 4) * 2;
+                type = TypeModifier.Wyvern;
             }
         }
 
         public override string GetDamageRoll()
         {
-            return "1d" + DamageDie + " + " + AttackBonus;
+            return "1d" + DamageDie + " + " + AttackBonus + " " + type;
         }
     }
 }
